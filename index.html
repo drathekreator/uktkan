@@ -111,12 +111,12 @@ input[type="date"]::-webkit-calendar-picker-indicator {
         <h1>Banding UKT</h1>
         <p id="result"></p>
         <div class="input-box">
-        <input type="text" id="username" name="Nama" placeholder="UKT saat ini">
+        <input type="text" id="ukt1" name="UKTbes" placeholder="UKT saat ini">
         
         <br><br>
         </div>
         <div class="input-box">
-        <input type="text" id="date" name="Tanggal" placeholder="UKT yang diinginkan">
+        <input type="text" id="ukt2" name="UKTcil" placeholder="UKT yang diinginkan">
       
         <br><br>
         </div>
@@ -124,20 +124,30 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     </div>
     <script>
         function validation(){
-    var username = document.getElementById('username').value;
-    var date = document.getElementById('date').value;
+    var ukt1 = document.getElementById('ukt1').value;
+    var ukt2 = document.getElementById('ukt2').value;
 
-    if (isNaN(username) || isNaN(date)) {
+    if (isNaN(ukt1) || isNaN(ukt2)) {
     document.getElementById("result").textContent = "Please enter valid numbers.";
     return;
   }
 
-  const a = parseFloat(username);
-  const b = parseFloat(date);
+  if(ukt1 === '' || ukt2 === ''){
+        document.getElementById("result").innerHTML="Isi dlu";
+        return;
+    }
+
+  const a = parseFloat(ukt1);
+  const b = parseFloat(ukt2);
+
+ 
 
     if(a > b) 
     {
-        window.location.assign('WhatsApp Video 2024-06-25 at 22.30.14_6a9367d2.mp4');
+        location.assign('vid.html');
+    }
+    else if(a === b){
+        document.getElementById("result").innerHTML="Sama aja dong sayang";
     }
     else{
         document.getElementById("result").innerHTML="Aje gile lu le😛";
